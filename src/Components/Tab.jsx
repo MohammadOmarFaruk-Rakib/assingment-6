@@ -5,14 +5,7 @@ import { useFitContext } from "@/context/FitProvider";
 import { useState } from "react";
 import Link from "next/link";
 import Stats from "./Stats";
-
-import {
-  FiClock,
-  FiZap,
-  FiStar,
-  FiCheck,
-  FiX,
-} from "react-icons/fi";
+import {FiClock,FiZap,FiStar,FiCheck,FiX,} from "react-icons/fi";
 
 const Tab = () => {
   const {
@@ -24,8 +17,7 @@ const Tab = () => {
 
   const [activeTab, setActiveTab] = useState("today");
 
-  const Datas =
-    activeTab === "today" ? Newdata : SavedData;
+  const Datas = activeTab === "today" ? Newdata : SavedData;
 
   const handleRemove = (id) => {
     if (activeTab === "today") {
@@ -175,7 +167,7 @@ const Tab = () => {
                     Mark as Done
                   </button>
 
-                 
+
                   <button
                     type="button"
                     onClick={() =>

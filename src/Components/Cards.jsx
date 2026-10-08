@@ -14,10 +14,7 @@ const Cards = async () => {
     <section className="relative top-0 z-20 container mx-auto px-4 py-10">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {Data.map((item) => (
-          <Link
-            key={item.id}
-            href={`/Workouts/${item.id}`}
-          >
+          <Link key={item.id} href={`/Workouts/${item.id}`}>
             <div
               className="
                 overflow-hidden
@@ -41,7 +38,7 @@ const Cards = async () => {
 
               <div className="p-3">
                 <div className="mb-3 flex gap-2">
-                  {item.muscleGroups.map((muscle: string) => (
+                  {item.muscleGroups.map((muscle) => (
                     <span
                       key={muscle}
                       className="rounded-md bg-[#C2F800] px-2 py-1 text-[9px] font-bold uppercase text-black"
