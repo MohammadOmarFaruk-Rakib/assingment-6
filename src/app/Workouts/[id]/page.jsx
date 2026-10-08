@@ -49,7 +49,7 @@ const Page = async ({
 
             <div className="mt-4 flex flex-wrap gap-2">
               {SingleData.muscleGroups?.map(
-                (muscle: string) => (
+                (muscle) => (
                   <span
                     key={muscle}
                     className="rounded-full bg-[#C2F800] px-3 py-1 text-[9px] font-bold uppercase text-black"
