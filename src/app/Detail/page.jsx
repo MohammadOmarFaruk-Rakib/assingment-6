@@ -1,6 +1,6 @@
-import React from 'react'
+import { Suspense } from 'react'
 
-const page=async({params})=> {
+async function DetailContent({ params }) {
   const {id} = await params
 
   const res = await fetch(`https://api.api-store.workers.dev/api/fitlog/${id}`)
@@ -12,4 +12,11 @@ const page=async({params})=> {
     </div>
   )
 }
-export default page
+
+export default function Page({ params }) {
+  return (
+    <Suspense fallback={<div className="py-16 text-center text-sm text-[#7F8490]">Loading workout...</div>}>
+      <DetailContent params={params} />
+    </Suspense>
+  )
+}

@@ -1,8 +1,9 @@
+import { Suspense } from "react";
 import Addbuttons from "@/Components/Addbuttons";
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 
-const Page = async ({ params }) => {
+async function WorkoutContent({ params }) {
   const { id } = await params;
 
   const res = await fetch(
@@ -145,6 +146,12 @@ const Page = async ({ params }) => {
       <Footer />
     </>
   );
-};
+}
 
-export default Page;
+export default function Page({ params }) {
+  return (
+    <Suspense fallback={<div className="py-16 text-center text-sm text-[#7F8490]">Loading workout...</div>}>
+      <WorkoutContent params={params} />
+    </Suspense>
+  );
+}
